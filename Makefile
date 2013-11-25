@@ -1,13 +1,14 @@
 VPATH=src
 BUILDDIR=lib
 TESTDIR=test
-
+CLIENT_DIR=client
 
 BEANDIR=.
 JSONDIR=.
 
 COFFEE_SOURCES= $(wildcard $(VPATH)/*.coffee)
 COFFEE_OBJECTS=$(patsubst $(VPATH)/%.coffee, $(BUILDDIR)/%.js, $(COFFEE_SOURCES))
+CLIENT_COFFEE_SOURCES=$(wildcard $(CLIENT_DIR)/*.coffee)
 
 TEST_COFFEE_SOURCES= $(wildcard $(TESTDIR)/*.coffee)
 TEST_COFFEE_OBJECTS= $(patsubst $(TESTDIR)/%.coffee, $(TESTDIR)/%.js, $(TEST_COFFEE_SOURCES))
@@ -22,16 +23,16 @@ GRAMMAR_FILES=$(wildcard $(GRAMMAR_DIR)/*.pegjs)
 all: build
 
 .PHONY: build
-build: node_modules objects lib/testlet.js
+build: node_modules objects
 
 .PHONY: objects
-objects: $(JSON_FILES) $(COFFEE_OBJECTS)
+objects: $(JSON_FILES) $(COFFEE_OBJECTS) public/js/main.js
 
-$(JSONDIR)/%.json: $(BEANDIR)/%.bean
-	./node_modules/.bin/bean --source $<
+package.json: package.bean
+	./node_modules/.bin/bean --source package.bean 
 
-lib/testlet.js: $(COFFEE_SOURCES)
-	./node_modules/.bin/amdee --source src/ --target lib/testlet.js --recursive
+public/js/main.js: $(CLIENT_COFFEE_SOURCES) package.json
+	amdee --source client/ --target public/js/main.js --recursive
 
 .PHONY: test
 test: build
@@ -60,4 +61,4 @@ watch:
 
 .PHONY: start
 start:	all
-	./node_modules/.bin/supervisor -w routes,views,lib,src,client -e coffee,hbs,js,json -q server.js
+	./bin/onebook

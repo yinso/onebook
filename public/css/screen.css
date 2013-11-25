@@ -1,0 +1,128 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/*
+
+base.scss
+
+base setting for all of the scss files.
+
+*/
+/* line 21, ../sass/partials/_base.scss */
+* {
+  font-size: 1em;
+}
+
+/* line 25, ../sass/partials/_base.scss */
+body {
+  background-color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  margin: 0 auto 0 auto;
+}
+
+/* line 31, ../sass/partials/_base.scss */
+h6 {
+  font-size: 1.2em;
+}
+
+/* line 35, ../sass/partials/_base.scss */
+h5 {
+  font-size: 1.44em;
+}
+
+/* line 39, ../sass/partials/_base.scss */
+h4 {
+  font-size: 1.728em;
+}
+
+/* line 43, ../sass/partials/_base.scss */
+h3 {
+  font-size: 2.0736em;
+}
+
+/* line 47, ../sass/partials/_base.scss */
+h2 {
+  font-size: 2.48832em;
+}
+
+/* line 51, ../sass/partials/_base.scss */
+h1 {
+  font-size: 2.98598em;
+}
+
+/* line 55, ../sass/partials/_base.scss */
+textarea {
+  width: 40em;
+  height: 10em;
+  padding: 1em;
+  border: 1px solid #cccccc;
+  resize: none;
+}
+
+/* line 63, ../sass/partials/_base.scss */
+td {
+  vertical-align: top;
+}
+
+/* line 68, ../sass/partials/_base.scss */
+li {
+  margin-top: 0.4em;
+  line-height: 1.44em;
+}
+
+/* line 73, ../sass/partials/_base.scss */
+p {
+  line-height: 1.44em;
+}
+
+/* line 77, ../sass/partials/_base.scss */
+a {
+  cursor: pointer;
+}
+
+/* line 81, ../sass/partials/_base.scss */
+a.external {
+  font-style: oblique;
+  font-weight: bold;
+  color: brown;
+}
+
+/* line 87, ../sass/partials/_base.scss */
+a.missing {
+  color: red;
+}
+
+/* including 3 column layout */
+/* line 4, ../sass/partials/_layout.scss */
+#header {
+  clear: both;
+  float: left;
+  width: 100%;
+  border-bottom: 1px solid black;
+  background: #fdd;
+}
+
+/* line 12, ../sass/partials/_layout.scss */
+#column-1 {
+  background: #bfb;
+  float: left;
+  width: 33%;
+}
+
+/* line 18, ../sass/partials/_layout.scss */
+#column-2 {
+  background: #ddf;
+  float: left;
+  width: 67%;
+}
+
+/* line 24, ../sass/partials/_layout.scss */
+#footer {
+  clear: both;
+  float: left;
+  width: 100%;
+  background: blue;
+  color: red;
+  border: 1px solid red;
+}

@@ -1,0 +1,90 @@
+/*
+
+base.scss
+
+base setting for all of the scss files.
+
+*/
+
+// basic variable definitions.
+$white: #f8f8f8;
+$red: red;
+$blue: #3bbfce;
+$baseSize: 1em; // how to define 1em?
+$h6size: $baseSize * 1.2;
+$h5size: $h6size * 1.2;
+$h4size: $h5size * 1.2;
+$h3size: $h4size * 1.2;
+$h2size: $h3size * 1.2;
+$h1size: $h2size * 1.2;
+
+* {
+  font-size: $baseSize; // this doesn't do anything... hmm...
+}
+
+body {
+  background-color: $white;
+  font-family: Arial, sans-serif;
+  margin: 0 auto 0 auto;
+}
+
+h6 {
+  font-size: $h6size;
+}
+
+h5 {
+  font-size: $h5size;
+}
+
+h4 {
+  font-size: $h4size;
+}
+
+h3 {
+  font-size: $h3size;
+}
+
+h2 {
+  font-size: $h2size;
+}
+
+h1 {
+  font-size: $h1size;
+}
+
+textarea {
+  width: 40em;
+  height: 10em;
+  padding: 1em;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+td {
+  vertical-align: top;
+}
+
+
+li {
+  margin-top: $baseSize * 0.4;
+  line-height: $h5size;
+}
+
+p {
+  line-height: $h5size;
+}
+
+a {
+  cursor: pointer;
+}
+
+a.external {
+  font-style: oblique;
+  font-weight: bold;
+  color: brown;
+}
+
+a.missing {
+  color: $red;
+}
+

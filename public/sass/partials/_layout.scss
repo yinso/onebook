@@ -1,0 +1,36 @@
+
+@mixin three-column() {
+  /* including 3 column layout */
+  #header {
+    clear:both;
+    float:left;
+    width:100%;
+    border-bottom:1px solid #000;
+    background:#fdd;
+  }
+
+  #column-1 {
+    background:#bfb;
+    float: left;
+    width: 33%;
+  }
+
+  #column-2 {
+    background:#ddf;
+    float: left;
+    width: 67%;
+  }
+
+  #footer {
+    clear:both;
+    float:left;
+    width:100%;
+    background: blue;
+    color: red;
+    border: 1px solid red;
+  }
+
+}
+
+@include three-column();
+

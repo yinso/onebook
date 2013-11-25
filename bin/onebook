@@ -1,0 +1,24 @@
+#!/usr/bin/env node # -*- javascript -*- -p
+
+var argv = require('optimist').argv;
+var path = require('path');
+require('coffee-script');
+var app = require('../src/app');
+
+// the directory is going to be
+
+var basePath = process.cwd();
+if (basePath == __dirname) {
+    basePath = path.join(__dirname, 'public');
+}
+var command = argv._[0] || null;
+
+if (command == 'init') {
+    console.log('init', basePath);
+    app.init(basePath);
+} else if (!command) {
+    console.log('start', basePath);
+    app.run(basePath);
+} else {
+    console.error("unknown command:", command);
+}

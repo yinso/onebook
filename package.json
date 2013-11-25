@@ -1,14 +1,11 @@
 {
   "author": "YC <yinso.chen@gmail.com>",
-  "name": "testlet",
-  "description": "A simple test framework",
-  "version": "0.1.4",
+  "name": "onebook",
+  "description": "A simple online book viewer for books written in markdown",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "git@github.com:yinso/testlet.git"
-  },
-  "bin": {
-    "testlet": "./bin/testlet"
+    "url": "git://bitbucket.org/yinso/bookish.git"
   },
   "engines": {
     "node": "~ 0.8.4"
@@ -17,17 +14,43 @@
     "test": "make test",
     "prepublish": "make"
   },
-  "main": "./lib/runner.js",
   "dependencies": {
+    "express": "=3.0.3",
     "coffee-script": "=1.4.0",
-    "amdee": "~ 0.5.4",
-    "optimist": "=0.3.1"
+    "underscore": "=1.4.3",
+    "handlebars": "=1.0.10",
+    "hbs": "=2.0.1",
+    "node-sass": "=0.2.5",
+    "markdown": "=0.4.0",
+    "coffee-bean": "=0.2.0",
+    "cookie-signature": "=1.0.1",
+    "amdee": "~0.5.5",
+    "ncp": "=0.4.2"
   },
   "devDependencies": {
-    "coffee-bean": "=0.1.0",
+    "mocha": "= 1.7.3",
+    "supervisor": "= 0.5.0",
+    "supertest": "=0.5.1",
+    "libxmljs": "=0.6.1",
     "pegjs": "=0.7.0"
   },
   "amdee": {
-    "main": "./src/runner.coffee"
+    "main": "./client/main.coffee",
+    "skip": [
+      "jquery",
+      "markdown"
+    ],
+    "requireJS": {
+      "shim": {
+        "jquery": {
+          "deps": [],
+          "exports": "jQuery"
+        },
+        "markdown": {
+          "deps": [],
+          "exports": "markdown"
+        }
+      }
+    }
   }
 }
